@@ -11,7 +11,7 @@ function outLambda = tuneR( X, Y, numPartsKFoldCV, lambdaRange, func, options )
 %        options = a structure which optionally contain settings for func
 %
 % output: 
-%        bestLambda = best choice of r w.r.t. RMSE
+%        outLambda = best choice of r w.r.t. RMSE
 %
 % Author:
 %   Xiaoqian Wang
