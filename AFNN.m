@@ -22,7 +22,7 @@ function [predFunc, alpha, beta, aa] = AFNN(X, Y, options)
 %   Xiaoqian Wang
 %
 
-% tic;
+tic;
 
 [H, W, b, act] = calcuH(options,X);
 [~, beta] = ridge_regress( H, Y, options );
@@ -38,9 +38,7 @@ if isfield(options,'computeAlpha')
     if options.computeAlpha == 1
         for j = 1 : d
             tmpw = X(:,j) * W(:,j)' + repmat(b',n,1);
-%             tt{j} = act(tmpw);
             tmps = act(tmpw)*beta;
-            aa(j,:) = sqrt(sum(tmps.*tmps));
             alpha(j,:) = sqrt(sum(tmps.*tmps)) ./ norm(X(:,j));
         end
     end
@@ -48,7 +46,7 @@ end
 
 %
 
-% disp(['AFNN Computation took ' num2str(toc) ' seconds.']);
+disp(['AFNN Computation took ' num2str(toc) ' seconds.']);
 
 end
 
