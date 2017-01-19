@@ -12,10 +12,10 @@ Format of input:
     X: n*dim SNP data
     Y: n*c phenotype matrix
     options: a structure which optionally contain the following
-                - N: numHidNodes
-                - Act: choice of activation fucntion
-                - computeAlpha: compute alpha if this value is 1
-                - r: hyperparameter for the regularization term
+        - N: numHidNodes
+        - Act: choice of activation fucntion
+        - computeAlpha: compute alpha if this value is 1
+        - r: hyperparameter for the regularization term
                 
 Format of output:
 
