@@ -51,7 +51,6 @@ if isfield(options,'W')
     W = options.W;
 else
     W = unifrnd(-1, 1, N, d);
-%     W(:,2981) = 1;
 end
 
 if isfield(options,'b')
@@ -94,7 +93,7 @@ switch activation
         act = @(x) exp(-x.^2);
 
     otherwise
-		error('Unknown Activation Function.');
+	error('Unknown Activation Function.');
 end
 
 %
