@@ -9,7 +9,7 @@ function [H, W, b, act] = calcuH(options,X)
 %       
 %       options = a data structure with the following fields 
 %       - options.Act = choice of activation function from the following:
-%           'sigmoid'(Default) | 'ReLU' | 'tanh' | 'sin' | 'Gaussian'
+%           'sigmoid' | 'ReLU' | 'tanh' (Default) | 'sin' | 'Gaussian'
 %       - options.N = number of hidden nodes in FNN
 %           Default value: 50
 %       - options.k = number of interacting features
@@ -32,7 +32,7 @@ function [H, W, b, act] = calcuH(options,X)
 if isfield(options,'Act')
     activation = options.Act;
 else
-    activation = 'sigmoid';
+    activation = 'tanh';
 end
 
 if isfield(options,'N')
@@ -73,8 +73,7 @@ switch activation
         
     case 'sigmoid'
         % fprintf('sigmoid function');
-%         act = @(x) 1./(1+exp(-x));
-        act = @(x) 2./(1+exp(-x))-1;
+        act = @(x) 1./(1+exp(-x));
         
     case 'ReLU'
         % fprintf('ReLU function');
