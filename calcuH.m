@@ -50,7 +50,7 @@ end
 if isfield(options,'W')
     W = options.W;
 else
-    W = unifrnd(-1, 1, N, d);
+    W = unifrnd(0, 1, N, d);
 end
 
 if isfield(options,'b')
